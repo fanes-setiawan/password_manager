@@ -4,29 +4,20 @@ Password Manager adalah program sederhana untuk mengelola password menggunakan M
 
 Fitur
 
-  Registrasi
-  
-  Login
-  
-  add
-  
-  update
-  
-  delete
-  
-  displays
+      Registrasi
+      Login
+      add
+      update
+      delete
+      displays
   
 Penggunaan
 
-  Clone atau download repository ini
-  
-  Buat database MySQL dengan nama "password_manager"
-  
-  Import file "password_manager.sql" ke dalam database tersebut
-  
-  Buka terminal atau command prompt dan arahkan ke direktori yang menyimpan file python
-  
-  Jalankan perintah python password_manager.py
+      Clone atau download repository ini
+      Buat database MySQL dengan nama "password_manager"
+      Import file "password_manager.sql" ke dalam database tersebut
+      Buka terminal atau command prompt dan arahkan ke direktori yang menyimpan file python
+      Jalankan perintah python password_manager.py
   
 Screenshot
 
@@ -58,10 +49,7 @@ users database
   
 Keterangan
 
-  Pastikan anda sudah terinstall python dan library yang diperlukan diatas
-  
-  Pastikan anda sudah mengatur konfigurasi koneksi database yang benar di kode program
-  
-  Jangan lupa untuk mengubah password root pada konfigurasi koneksi database agar aman
-  
-  Program ini hanya digunakan untuk tujuan pendidikan dan tidak disarankan untuk digunakan pada sistem yang sesungguhnya.
+      Pastikan anda sudah terinstall python dan library yang diperlukan diatas
+      Pastikan anda sudah mengatur konfigurasi koneksi database yang benar di kode program
+      Jangan lupa untuk mengubah password root pada konfigurasi koneksi database agar aman
+      Program ini hanya digunakan untuk tujuan pendidikan dan tidak disarankan untuk digunakan pada sistem yang sesungguhnya.
