@@ -1,4 +1,3 @@
-# import os
 import mysql.connector
 from getpass import getpass
 import hashlib
@@ -12,29 +11,6 @@ conn = mysql.connector.connect(
   database="password_manager"
 )
 cursor = conn.cursor()
-
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        username VARCHAR(255) NOT NULL,
-        password VARCHAR(255) NOT NULL
-    )
-''')
-
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS accounts (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(255) NOT NULL,
-        username VARCHAR(255) NOT NULL,
-        password VARCHAR(255) NOT NULL,
-        user_id INT NOT NULL,
-        FOREIGN KEY (user_id) REFERENCES users(id)
-    )
-''')
-
-conn.commit()
 
 def register():
     name = input("Name: ")
@@ -62,7 +38,7 @@ def login():
 def add_account(user_id):
     name = input("Account Name: ")
     username = input("Account Username: ")
-    password = hash_password(getpass("Account Password: "))
+    password = getpass("Account Password: ")
 
     cursor.execute("INSERT INTO accounts (name, username, password, user_id) VALUES (%s, %s, %s, %s)", (name, username, password, user_id))
     conn.commit()
@@ -75,7 +51,7 @@ def update_account(user_id):
     if (account_id,) in accounts:
         name = input("New Account Name: ")
         username = input("New Account Username: ")
-        password = hash_password(getpass("New Account Password: "))
+        password = getpass("New Account Password: ")
 
         cursor.execute("UPDATE accounts SET name = %s, username = %s, password = %s WHERE id = %s", (name, username, password, account_id))
         conn.commit()
