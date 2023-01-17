@@ -44,7 +44,7 @@ def add_account(user_id):
     conn.commit()
     print("Account added successfully!")
 
-def update_account(user_id):
+def update_accounts(user_id):
     account_id = int(input("Enter the ID of the account you want to update: "))
     cursor.execute("SELECT id FROM accounts WHERE user_id = %s", (user_id,))
     accounts = cursor.fetchall()
@@ -102,7 +102,7 @@ def main():
                     if choice == "1":
                         add_account(user_id)
                     elif choice == "2":
-                        update_account(user_id)
+                        update_accounts(user_id)
                     elif choice == "3":
                         delete_account(user_id)
                     elif choice == "4":
