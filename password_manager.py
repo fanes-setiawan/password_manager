@@ -51,13 +51,14 @@ def update_account(user_id):
     if (account_id,) in accounts:
         name = input("New Account Name: ")
         username = input("New Account Username: ")
-        password = getpass("New Account Password: ")
+        password = hash_password(getpass("New Account Password: "))
 
         cursor.execute("UPDATE accounts SET name = %s, username = %s, password = %s WHERE id = %s", (name, username, password, account_id))
         conn.commit()
         print("Account updated successfully!")
     else:
         print("Invalid account ID.")
+
 
 def delete_account(user_id):
     account_id = int(input("Enter the ID of the account you want to delete: "))
@@ -121,4 +122,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
