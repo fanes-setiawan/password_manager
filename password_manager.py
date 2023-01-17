@@ -59,7 +59,6 @@ def update_account(user_id):
     else:
         print("Invalid account ID.")
 
-
 def delete_account(user_id):
     account_id = int(input("Enter the ID of the account you want to delete: "))
     cursor.execute("SELECT id FROM accounts WHERE user_id = %s", (user_id,))
